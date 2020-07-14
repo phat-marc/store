@@ -5,6 +5,7 @@
   justify-content: center;
   margin: 0 7.5px 15px;
   min-width: 30%;
+  min-width: 300px;
   height: 240px;
   border: 1px solid black;
   overflow: hidden;
@@ -47,24 +48,29 @@
     align-items: center;
     justify-content: center;
     padding: 0 25px;
-    height: 90px;
-    border: 1px solid black;
-    background-color: ghostwhite;
-    opacity: .7;
+    height: 80px;
+    border: 1px solid ghostwhite;
+    background-color: #4a4a4a;
+    opacity: .75;
     position: absolute;
   
 
     .ttl {
-      margin-bottom: 6px;
+      margin-bottom: 0;
       font-weight: bold;
       font-size: 22px;
-      color: #4a4a4a;
+      // color: #4a4a4a;
+      color: ghostwhite;
     }
 
     .sbtl {
+      padding: 0 15px;
+      // border: 1px solid ghostwhite;
+      background-color: ghostwhite;
       font-weight: lighter;
       font-size: 16px; 
-      color: black;
+      color: #4a4a4a;
+      transform: translateY(16px);
     }
   }
 }
