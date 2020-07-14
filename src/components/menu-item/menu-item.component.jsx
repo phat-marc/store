@@ -1,11 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+//this above is a higher order compo - takes a compo as agrument and returns a modified compo
+//see export default... gives us access to history prop
 
 import './menu-item.styles.scss'
 
-
 // see the dynamic image styling, much wow video 65 13minutes
-const MenuItem = ({ title, imageUrl, size }) => (
-  <div className={`${size} men-itm`}>
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+  <div className={`${size} men-itm`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div 
       className='bg-img' 
       style={{ 
@@ -19,4 +21,4 @@ const MenuItem = ({ title, imageUrl, size }) => (
   </div>
 )
 
-export default MenuItem;
+export default withRouter(MenuItem);

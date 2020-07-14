@@ -6,19 +6,19 @@ import HomePage from './pages/homepage/homepage.component';
 import './App.css';
 
 // HomePage is route number one
-// Hats is number 2, and HatsDeets is a third nested route
-const HatsPage = (props) => {
+// Birds is number 2, and BirdsDeets is a third nested route
+const BirdsPage = (props) => {
     console.log('log', props);
     return (
     <div className="center-page">
-      <h1>Hats Page </h1>
+      <h1>Birds Page </h1>
     </div>  
   )
 }
 
-const HatsDeets = () => (
+const BirdsDeets = () => (
   <div className="center-page">
-    <h1>Details about Hats </h1>
+    <h1>Details about Birds </h1>
   </div> 
 )
 
@@ -28,8 +28,8 @@ function App() {
     <div className="App-wrapper">
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/hats' component={HatsPage} />
-        <Route path='/hats/:deets' component={HatsDeets} />
+        <Route path='/birds' component={BirdsPage} />
+        <Route path='/birds/:deets' component={BirdsDeets} />
       </Switch>
     </div>
   );
