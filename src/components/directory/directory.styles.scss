@@ -4,3 +4,7 @@
   justify-content: space-between;
   width: 100%;
 }
+
+@media only screen and (min-width: 960px) {
+  .dir-men {padding: 0 2rem;}
+}
