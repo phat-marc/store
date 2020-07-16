@@ -6,11 +6,15 @@
   .title {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    padding-left: 1rem;
+    padding-left: .5rem;
   }
 
   .preview {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .preview { flex-wrap: wrap;}
   }
 }

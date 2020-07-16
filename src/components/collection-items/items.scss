@@ -1,9 +1,10 @@
 .coll-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 1rem;
-  width: 100%;
+  align-items: space-between;
+  flex-wrap: wrap;
+  margin: 0 .5rem;
+  width: 25%;
   height: 350px;
 
   .image {
@@ -15,15 +16,15 @@
   }
 
   .footer {
-    width: 100%;
-    height: 5%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    height: 5%;
     font-size: 18px;
 
     .name {
-      width: 90%;
       margin-bottom: 15px;
+      width: 90%;
     }
 
     .price {
@@ -31,3 +32,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .coll-item {
+    margin: 0 .25rem;
+    min-width: 164px;
+  }
+  // .image {max-width: 164px;}
+  .footer {justify-content: space-around;}
+}
+// .coll-item:last-child {
+  // margin-right: 0;
+// }
