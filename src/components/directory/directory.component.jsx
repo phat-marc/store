@@ -24,6 +24,7 @@ class Directory extends React.Component {
       {
         title: 'horses',
         imageUrl: 'https://source.unsplash.com/random/400×400/?horse',
+        size: 'med',
         id: 3,
         linkUrl: ''
       },

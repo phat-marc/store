@@ -1,0 +1,56 @@
+// $sub-color and @mixins are just re-useable blocks of code
+
+$sub-color: lightgrey;
+$main-color: ghostwhite;
+
+@mixin shrinkLabel {
+  top: -20px;
+  color: $main-color;
+  font-size: 12px;
+}
+
+.group {
+  position: relative;
+  margin: 45px 0;
+
+  .form-input {
+    display: block;
+    padding: 10px 10px 10px 5px;
+    margin: 25px 0;
+    width: 300px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $sub-color;
+    background: none;
+    // background-color: white;
+    color: $sub-color;
+    font-size: 18px;
+
+    &:focus {
+      outline: none;
+    }
+// when the user focuses on form-input we target (~) form-input-label and include shrinkLabel styling
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+
+  .form-input-label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    color: $sub-color;
+    font-size: 16px;
+    font-weight: normal;
+    pointer-events: none;
+    transition: .3s ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

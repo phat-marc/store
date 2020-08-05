@@ -10,9 +10,10 @@ body {
   body {padding: 0 4rem;}
 }
 
-.App-wrapper {
-  /* padding: 1rem; */
-}
+/* see #root in index.css
+.app-wrapper {
+  max-width: 1250px;
+} */
 
 .center-page {
   display: flex;

@@ -23,6 +23,14 @@
     }
   }
 
+  @media only screen and (min-width: 650px) {
+    &.med {height: 380px;}
+  }
+    
+  @media only screen and (min-width: 1080px) {
+    &.med {height: 240px;}
+  }
+
   &.large {
     height: 380px;
   }
