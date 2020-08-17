@@ -5,6 +5,9 @@ import Header from './components/header/header';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Signings from './pages/logins/signings.jsx';
+//video 87 ... also convert app to class
+import { auth } from './firebase/firebase.utils';
+
 // import logo from './logo.svg';
 import './App.css';
 
@@ -26,20 +29,43 @@ import './App.css';
 // )
 
 // switch renders only one route at a time 
-function App() {
-  return (
-    // <div className="app-wrapper"> see #root in index
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/shop' component={ShopPage} />
-        <Route path='/signin' component={Signings} />
-      </Switch>
-    </div>
-  );
-}
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      currentUser: null 
+    }
+  }
 
+  // this section is the app listening for auth state chages,
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+
+      // console.log(user);
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render() {
+    return (
+      // <div className="app-wrapper"> see #root in index
+      <div>
+        <Header currentUser={this.state.currentUser} />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route path='/signin' component={Signings} />
+        </Switch>
+      </div>
+    );
+  }
+}
 export default App;
 
 

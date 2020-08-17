@@ -11,13 +11,13 @@ $main-color: ghostwhite;
 
 .group {
   position: relative;
-  margin: 45px 0;
+  margin: 20px 0;
 
   .form-input {
     display: block;
     padding: 10px 10px 10px 5px;
-    margin: 25px 0;
-    width: 300px;
+    margin: auto 0;
+    min-width: 250px;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;

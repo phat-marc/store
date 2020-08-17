@@ -38,24 +38,30 @@ class Login extends React.Component{
         <p>Login in with your email and passsword</p>
 
         <form onSubmit={this.handleSubmit}>
-          <FormInput 
-            name='email' 
-            type='email' 
-            label='Email'
-            value={this.state.email} 
-            handleChange={this.handleChange}
-            required 
-          />
-          <FormInput 
-            name='password' 
-            type='passeord' 
-            label='Password'
-            value={this.state.password} 
-            handleChange={this.handleChange}
-            required 
-          />
-          <Button type='submit'>Submit</Button>
-          <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+          <div className='center'>
+            <FormInput 
+              name='email' 
+              type='email' 
+              label='Email'
+              value={this.state.email} 
+              handleChange={this.handleChange}
+              required 
+            />
+            <FormInput 
+              name='password' 
+              type='passeord' 
+              label='Password'
+              value={this.state.password} 
+              handleChange={this.handleChange}
+              required 
+            />
+          </div>
+          <div className='buttons'>
+            <Button type='submit'>Submit</Button>
+            <Button onClick={signInWithGoogle} isGoogleSignIn>
+              Sign in with Google
+            </Button>
+          </div>
         </form>
       </div>
     );
